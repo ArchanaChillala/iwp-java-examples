@@ -4,6 +4,7 @@ import static java.lang.String.valueOf;
 
 public class RnaTranscription {
     private static HashMap<Character, Character> transcription = new HashMap<>();
+
     static {
         transcription.put('G', 'C');
         transcription.put('C', 'G');
