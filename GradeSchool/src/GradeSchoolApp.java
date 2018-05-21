@@ -10,5 +10,6 @@ public class GradeSchoolApp {
 
         System.out.println("Grade-wise student list  : " + school.getStudentList());
         System.out.println("Total students in school : " + school.numberOfStudents());
+        System.out.println("Sorted students list     : " + school.studentsByGradeAlphabetical());
     }
 }
