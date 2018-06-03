@@ -5,5 +5,6 @@ class CustomUncheckedException extends RuntimeException {
     }
 
     CustomUncheckedException() {
+        super();
     }
 }

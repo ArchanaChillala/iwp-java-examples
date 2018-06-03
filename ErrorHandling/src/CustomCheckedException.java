@@ -7,6 +7,6 @@ class CustomCheckedException extends IOException {
     }
 
     CustomCheckedException() {
-
+        super();
     }
 }
