@@ -42,20 +42,20 @@ public class Mobile {
         return brand;
     }
 
-    public boolean hasRearCamera() {
-        return camera.isRearCamera();
-    }
-
     public double getPrice() {
         return price;
     }
 
-    public boolean getByPriceRange(double startPrice, double endPrice) {
-        return price >= startPrice && price <= endPrice;
-    }
-
     public String getOS() {
         return OS;
+    }
+
+    public boolean hasRearCamera() {
+        return camera.isRearCamera();
+    }
+
+    public boolean getByPriceRange(double startPrice, double endPrice) {
+        return price >= startPrice && price <= endPrice;
     }
 
     public boolean hasWidthLessThan(double width) {
