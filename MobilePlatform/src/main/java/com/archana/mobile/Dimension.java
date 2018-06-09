@@ -1,3 +1,5 @@
+package com.archana.mobile;
+
 public class Dimension {
     private int length;
     private int breadth;
@@ -10,7 +12,6 @@ public class Dimension {
     }
 
     public int getWidth() {
-
         return width;
     }
 }

@@ -1,3 +1,4 @@
+package com.archana.mobile;
 
 import java.util.List;
 
@@ -41,27 +42,33 @@ public class Mobile {
         return brand;
     }
 
-    public Camera getCamera() {
-        return camera;
-    }
-
-    public Dimension getDimension() {
-        return dimension;
+    public boolean hasRearCamera() {
+        return camera.isRearCamera();
     }
 
     public double getPrice() {
-
         return price;
     }
 
-    public String getOS() {
+    public boolean getByPriceRange(double startPrice, double endPrice) {
+        return price >= startPrice && price <= endPrice;
+    }
 
+    public String getOS() {
         return OS;
+    }
+
+    public boolean hasWidthLessThan(double width) {
+        return dimension.getWidth() < width;
+    }
+
+    public boolean hasResolutionMoreThan(double resolution) {
+        return camera.getResolution() > resolution;
     }
 
     @Override
     public String toString() {
-        return "Mobile{" +
+        return "Mobile {" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
