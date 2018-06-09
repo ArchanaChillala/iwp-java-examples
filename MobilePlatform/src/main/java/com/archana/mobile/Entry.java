@@ -24,10 +24,10 @@ public class Entry {
 
         MobileApplication app = new MobileApplication(mobiles);
 
-        System.out.println(app.filterByRearCamera());
-        System.out.println(app.filterByBrandAndDimensionWidth("Apple"));
+        System.out.println(app.filterByRearCameraResolution(10));
+        System.out.println(app.filterByBrandAndWidth("Apple", 2));
         System.out.println(app.filterByOSAndPriceRange("ios", 10000, 50000));
-        System.out.println(app.getDevicesCountByBrand());
+        System.out.println(app.countMobilesByBrand());
         System.out.println(app.sortByPrice());
     }
 }

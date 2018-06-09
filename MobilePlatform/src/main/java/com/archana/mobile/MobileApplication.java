@@ -12,15 +12,15 @@ class MobileApplication {
         this.mobiles = mobiles;
     }
 
-    Map getDevicesCountByBrand() {
+    Map countMobilesByBrand() {
         return mobiles.stream()
                 .collect(Collectors.groupingBy(Mobile::getBrand, Collectors.counting()));
     }
 
-    List<Mobile> filterByRearCamera() {
+    List<Mobile> filterByRearCameraResolution(double resolution) {
         return mobiles.stream()
                 .filter(Mobile::hasRearCamera)
-                .filter(mobile -> mobile.hasResolutionMoreThan(10))
+                .filter(mobile -> mobile.hasResolutionMoreThan(resolution))
                 .collect(Collectors.toList());
     }
 
@@ -31,10 +31,10 @@ class MobileApplication {
                 .collect(Collectors.toList());
     }
 
-    List<Mobile> filterByBrandAndDimensionWidth(String brand) {
+    List<Mobile> filterByBrandAndWidth(String brand, double width) {
         return mobiles.stream()
                 .filter(mobile -> brand.equalsIgnoreCase(mobile.getBrand()))
-                .filter(mobile -> mobile.hasWidthLessThan(2))
+                .filter(mobile -> mobile.hasWidthLessThan(width))
                 .collect(Collectors.toList());
     }
 
