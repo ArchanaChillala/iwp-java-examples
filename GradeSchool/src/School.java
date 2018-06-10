@@ -5,7 +5,11 @@ import static java.util.Collections.sort;
 import static java.util.Collections.unmodifiableMap;
 
 public class School {
-    private HashMap<Integer, List<String>> studentList = new HashMap<>();
+    private Map<Integer, List<String>> studentList;
+
+    public School() {
+        studentList = new HashMap<>();
+    }
 
     public Map<Integer, List<String>> getStudentList() {
         return unmodifiableMap(studentList);
@@ -19,7 +23,7 @@ public class School {
     }
 
     public void add(String name, int grade) {
-        if(studentList.keySet().contains(grade)) {
+        if(studentList.containsKey(grade)) {
             studentList.get(grade).add(name);
         }
         else {
@@ -30,17 +34,13 @@ public class School {
     }
 
     public List<String> grade(int grade) {
-        if(studentList.keySet().contains(grade))
-            return studentList.get(grade);
-        else
-            return emptyList();
+        return studentList.getOrDefault(grade, emptyList());
     }
 
     public Map<Integer, List<String>> studentsByGradeAlphabetical() {
-        HashMap<Integer, List<String>> sortedStudentList = studentList;
-         for(int grade : sortedStudentList.keySet()) {
-            sort(sortedStudentList.get(grade));
+         for(int grade : studentList.keySet()) {
+            sort(studentList.get(grade));
         }
-        return unmodifiableMap(sortedStudentList);
+        return unmodifiableMap(studentList);
     }
 }
