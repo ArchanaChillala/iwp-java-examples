@@ -1,3 +1,5 @@
+package com.archana.school;
+
 import org.junit.Before;
 import org.junit.Test;
 

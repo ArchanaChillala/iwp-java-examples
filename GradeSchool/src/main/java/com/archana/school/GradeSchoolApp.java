@@ -1,3 +1,6 @@
+package com.archana.school;
+
+
 public class GradeSchoolApp {
 
     public static void main(String[] args) {
