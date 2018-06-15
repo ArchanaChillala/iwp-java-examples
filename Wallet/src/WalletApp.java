@@ -1,7 +1,11 @@
 public class WalletApp {
-    public static void main(String[] args) {
-        WalletOwner archana = new WalletOwner(300);
 
+    public static void main(String[] args) {
+        WalletOwner archana = new WalletOwner();
+
+        System.out.println(archana.knowBalance());
+
+        archana.putMoney(600);
         System.out.println(archana.knowBalance());
 
         archana.putMoney(-400);
