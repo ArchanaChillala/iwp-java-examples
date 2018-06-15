@@ -17,9 +17,9 @@ public class RnaTranscription {
         System.out.println(rna.transcribe("GG"));
     }
 
-    public String transcribe(String string) {
+    public String transcribe(String strand) {
         StringBuilder newString = new StringBuilder();
-        for(Character character : string.toCharArray())
+        for(Character character : strand.toCharArray())
             newString.append(transcription.get(character));
         return valueOf(newString);
     }
