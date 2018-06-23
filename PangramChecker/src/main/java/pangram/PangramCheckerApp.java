@@ -1,3 +1,5 @@
+package pangram;
+
 public class PangramCheckerApp {
 
     public static void main(String[] args) {
