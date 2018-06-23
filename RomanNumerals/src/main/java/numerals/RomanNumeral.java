@@ -32,12 +32,12 @@ public class RomanNumeral {
         for (int index = 0, count = size - 1; index < size && count >= 0; index++, count--) {
             Double powerOf10 = pow(10, count);
             Units units = placeValueSymbols.get(powerOf10.intValue());
-            romanNumeral.append(convertIntoRoman(placeValueList.get(index), units));
+            romanNumeral.append(getRomanDigit(placeValueList.get(index), units));
         }
         return romanNumeral.toString();
     }
 
-    private String convertIntoRoman(int digit, Units units) {
+    private String getRomanDigit(int digit, Units units) {
         StringBuilder romanNumber = new StringBuilder();
         if (digit <= 3)
             getUpToThree(romanNumber, digit, units.first());
