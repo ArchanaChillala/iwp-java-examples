@@ -2,6 +2,8 @@ package chess;
 
 import java.util.Objects;
 
+import static java.lang.Math.abs;
+
 public class Queen {
     private static final int MAX_POINT = 7;
 
@@ -33,31 +35,12 @@ public class Queen {
         return false;
     }
 
-    boolean canAttackDiagonally(Queen queen) {
+    boolean canAttackDiagonally(Queen otherQueen) {
         for (int index = 0; index < MAX_POINT; index++) {
-            if (canAttackFirstDiagonal(queen, index) ||
-                canAttackSecondDiagonal(queen, index) ||
-                canAttackThirdDiagonal(queen, index) ||
-                canAttackFourthDiagonal(queen, index))
+            if (abs(x - otherQueen.x) == abs(y - otherQueen.y))
                 return true;
         }
         return false;
-    }
-
-    private boolean canAttackFirstDiagonal(Queen queen, int index) {
-        return queen.x == x - index && queen.y == y + index;
-    }
-
-    private boolean canAttackSecondDiagonal(Queen queen, int index) {
-        return queen.x == x + index && queen.y == y - index;
-    }
-
-    private boolean canAttackThirdDiagonal(Queen queen, int index) {
-        return queen.x == x - index && queen.y == y - index;
-    }
-
-    private boolean canAttackFourthDiagonal(Queen queen, int index) {
-        return queen.x == x + index && queen.y == y + index;
     }
 
     @Override
