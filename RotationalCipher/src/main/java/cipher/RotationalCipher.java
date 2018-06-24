@@ -2,8 +2,8 @@ package cipher;
 
 class RotationalCipher {
     private static final int TOTAL_ALPHABET = 26;
-    private static final int ASCII_FOR_A = 65;
-    private static final int ASCII_FOR_a = 97;
+    private static final int ASCII_UPPERCASE_A = 65;
+    private static final int ASCII_LOWERCASE_A = 97;
 
     private int key;
 
@@ -25,9 +25,9 @@ class RotationalCipher {
 
     private int getAsciiCode(Character character) {
         if(Character.isLowerCase(character)) {
-            return rotateAscii(character, ASCII_FOR_a);
+            return rotateAscii(character, ASCII_LOWERCASE_A);
         } else
-            return rotateAscii(character, ASCII_FOR_A);
+            return rotateAscii(character, ASCII_UPPERCASE_A);
     }
 
     private int rotateAscii(int character, int asciiForA) {
